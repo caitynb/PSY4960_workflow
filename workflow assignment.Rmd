@@ -1,0 +1,24 @@
+---
+title: "workflow assignment"
+author: "Caitlyn Barrett"
+date: "11/18/2021"
+output: html_document
+---
+1. Uploads the data
+```{r}
+dessert_table<-read.csv("dessert_psy4960.csv")
+```
+2. Summarizes the three columns
+```{r}
+summary(dessert_table$name)
+##since it's a character, I think table might work better!
+table(dessert_table$name)
+summary(dessert_table$rating)
+summary(dessert_table$quantity)
+```
+3. Visually represents the data in some way
+```{r}
+library(ggplot2)
+ggplot(data=dessert_table, aes(name, rating, fill=quantity))+geom_bar(stat="identity")
+```
+
